@@ -29,239 +29,86 @@ format: .string "%d\n"
  .section .text
  .globl main
 main:
-	pushq	$2
+	pushq	$1000001
+	popq	n
+	pushq	$100000000
+	popq	s
+	pushq	$0
 	popq	a
-	pushq	$4
-	popq	b
-	pushq	a
-	pushq	b
-	popq	%rbx
-	popq	%rax
-	addq	%rbx, %rax
-	pushq	%rax
-	popq	c
-	pushq	c
-	popq	%rdi
-	movq	$format, %rax
-	movq	%rdi, %rsi
-	movq	%rax, %rdi
-	movq	$0, %rax
-	call printf
-	pushq	a
-	pushq	b
-	popq	%rbx
-	popq	%rax
-	sub	%rbx, %rax
-	pushq	%rax
-	popq	c
-	pushq	c
-	popq	%rdi
-	movq	$format, %rax
-	movq	%rdi, %rsi
-	movq	%rax, %rdi
-	movq	$0, %rax
-	call printf
-	pushq	a
-	pushq	b
+	pushq	$0
+	popq	t
+L000:
+	pushq	n
+	pushq	$0
 	popq	%rdi
 	popq	%rax
-	imulq	%rdi
-	pushq	%rax
-	popq	c
-	pushq	c
+	cmpq	%rdi, %rax
+	jle	L001
+	pushq	t
+	pushq	$0
 	popq	%rdi
-	movq	$format, %rax
-	movq	%rdi, %rsi
-	movq	%rax, %rdi
-	movq	$0, %rax
-	call printf
-	pushq	b
+	popq	%rax
+	cmpq	%rdi, %rax
+	jne	L002
+	pushq	n
+	popq	d
+	pushq	$1
+	popq	t
+	jmp	L003
+L002:
+	pushq	n
+	popq	%rax
+	negq	%rax
+	pushq	%rax
+	popq	d
+	pushq	$0
+	popq	t
+L003:
 	pushq	a
+	pushq	s
+	pushq	d
 	popq	%rdi
 	popq	%rax
 	cqo
 	idivq	%rdi
 	pushq	%rax
-	popq	c
-	pushq	c
-	popq	%rdi
-	movq	$format, %rax
-	movq	%rdi, %rsi
-	movq	%rax, %rdi
-	movq	$0, %rax
-	call printf
-	pushq	$3
-	popq	%rax
-	negq	%rax
-	pushq	%rax
-	popq	d
-	pushq	d
-	popq	%rdi
-	movq	$format, %rax
-	movq	%rdi, %rsi
-	movq	%rax, %rdi
-	movq	$0, %rax
-	call printf
-	pushq	$1
-	pushq	$2
-	popq	%rdi
-	popq	%rax
-	cmpq	%rdi, %rax
-	jge	L000
-	pushq	$111
-	popq	%rdi
-	movq	$format, %rax
-	movq	%rdi, %rsi
-	movq	%rax, %rdi
-	movq	$0, %rax
-	call printf
-	jmp	L001
-L000:
-	pushq	$1110
-	popq	%rdi
-	movq	$format, %rax
-	movq	%rdi, %rsi
-	movq	%rax, %rdi
-	movq	$0, %rax
-	call printf
-L001:
-	pushq	$2
-	pushq	$1
-	popq	%rdi
-	popq	%rax
-	cmpq	%rdi, %rax
-	jle	L002
-	pushq	$222
-	popq	%rdi
-	movq	$format, %rax
-	movq	%rdi, %rsi
-	movq	%rax, %rdi
-	movq	$0, %rax
-	call printf
-	jmp	L003
-L002:
-	pushq	$2220
-	popq	%rdi
-	movq	$format, %rax
-	movq	%rdi, %rsi
-	movq	%rax, %rdi
-	movq	$0, %rax
-	call printf
-L003:
-	pushq	$1
-	pushq	$2
-	popq	%rdi
-	popq	%rax
-	cmpq	%rdi, %rax
-	jg	L004
-	pushq	$333
-	popq	%rdi
-	movq	$format, %rax
-	movq	%rdi, %rsi
-	movq	%rax, %rdi
-	movq	$0, %rax
-	call printf
-	jmp	L005
-L004:
-	pushq	$3330
-	popq	%rdi
-	movq	$format, %rax
-	movq	%rdi, %rsi
-	movq	%rax, %rdi
-	movq	$0, %rax
-	call printf
-L005:
-	pushq	$2
-	pushq	$1
-	popq	%rdi
-	popq	%rax
-	cmpq	%rdi, %rax
-	jl	L006
-	pushq	$444
-	popq	%rdi
-	movq	$format, %rax
-	movq	%rdi, %rsi
-	movq	%rax, %rdi
-	movq	$0, %rax
-	call printf
-	jmp	L007
-L006:
-	pushq	$4440
-	popq	%rdi
-	movq	$format, %rax
-	movq	%rdi, %rsi
-	movq	%rax, %rdi
-	movq	$0, %rax
-	call printf
-L007:
-	pushq	$2
-	pushq	$2
-	popq	%rdi
-	popq	%rax
-	cmpq	%rdi, %rax
-	jne	L008
-	pushq	$555
-	popq	%rdi
-	movq	$format, %rax
-	movq	%rdi, %rsi
-	movq	%rax, %rdi
-	movq	$0, %rax
-	call printf
-	jmp	L009
-L008:
-	pushq	$5550
-	popq	%rdi
-	movq	$format, %rax
-	movq	%rdi, %rsi
-	movq	%rax, %rdi
-	movq	$0, %rax
-	call printf
-L009:
-	pushq	$1
-	pushq	$2
-	popq	%rdi
-	popq	%rax
-	cmpq	%rdi, %rax
-	je	L010
-	pushq	$666
-	popq	%rdi
-	movq	$format, %rax
-	movq	%rdi, %rsi
-	movq	%rax, %rdi
-	movq	$0, %rax
-	call printf
-	jmp	L011
-L010:
-	pushq	$6660
-	popq	%rdi
-	movq	$format, %rax
-	movq	%rdi, %rsi
-	movq	%rax, %rdi
-	movq	$0, %rax
-	call printf
-L011:
-L012:
-	pushq	a
-	pushq	$10
-	popq	%rdi
-	popq	%rax
-	cmpq	%rdi, %rax
-	jge	L013
-	pushq	a
-	popq	%rdi
-	movq	$format, %rax
-	movq	%rdi, %rsi
-	movq	%rax, %rdi
-	movq	$0, %rax
-	call printf
-	pushq	a
-	pushq	$1
 	popq	%rbx
 	popq	%rax
 	addq	%rbx, %rax
 	pushq	%rax
 	popq	a
-	jmp	L012
-L013:
+	pushq	n
+	pushq	$2
+	popq	%rbx
+	popq	%rax
+	sub	%rbx, %rax
+	pushq	%rax
+	popq	n
+	jmp	L000
+L001:
+	pushq	a
+	pushq	s
+	pushq	$100000
+	popq	%rdi
+	popq	%rax
+	cqo
+	idivq	%rdi
+	pushq	%rax
+	popq	%rdi
+	popq	%rax
+	cqo
+	idivq	%rdi
+	pushq	%rax
+	pushq	$4
+	popq	%rdi
+	popq	%rax
+	imulq	%rdi
+	pushq	%rax
+	popq	%rdi
+	movq	$format, %rax
+	movq	%rdi, %rsi
+	movq	%rax, %rdi
+	movq	$0, %rax
+	call printf
 	movq	$0, (%rsp)
 	call	exit
