@@ -6,39 +6,39 @@ c=a-b;
 print c;
 c=a*b;
 print c;
-if () {
-
+if (1<2) {
+print 111;
 }
 else {
-
+print 1110;
 }
-if () {
-
-}
-else {
-
-}
-if () {
-
+if (2>1) {
+print 222;
 }
 else {
-
+print 2220;
 }
-if () {
-
-}
-else {
-
-}
-if () {
-
+if (1<=2) {
+print 333;
 }
 else {
-
+print 3330;
 }
-if () {
-
+if (2>=1) {
+print 444;
 }
 else {
-
+print 4440;
+}
+if (2==2) {
+print 555;
+}
+else {
+print 5550;
+}
+if (1!=2) {
+print 666;
+}
+else {
+print 6660;
 }
