@@ -1,6 +1,7 @@
 #!/bin/bash
 
 rm test.s
+rm test.exe
 
 touch test.s
 cat lib/prologue.s >> test.s

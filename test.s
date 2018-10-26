@@ -29,22 +29,52 @@ format: .string "%d\n"
  .section .text
  .globl main
 main:
-	pushq	$1
+	pushq	$2
+	popq	a
 	pushq	$4
-	popq	%rax
-	negq	%rax
-	pushq	%rax
+	popq	b
+	pushq	a
+	pushq	b
 	popq	%rbx
 	popq	%rax
 	addq	%rbx, %rax
 	pushq	%rax
-	popq	a
-	pushq	a
+	popq	c
+	pushq	c
 	popq	%rdi
 	movq	$format, %rax
 	movq	%rdi, %rsi
 	movq	%rax, %rdi
 	movq	$0, %rax
 	call printf
+	pushq	a
+	pushq	b
+	popq	%rbx
+	popq	%rax
+	sub	%rbx, %rax
+	pushq	%rax
+	popq	c
+	pushq	c
+	popq	%rdi
+	movq	$format, %rax
+	movq	%rdi, %rsi
+	movq	%rax, %rdi
+	movq	$0, %rax
+	call printf
+	pushq	a
+	pushq	b
+	popq	%rdi
+	popq	%rax
+	imulq	%rdi
+	pushq	%rax
+	popq	c
+	pushq	c
+	popq	%rdi
+	movq	$format, %rax
+	movq	%rdi, %rsi
+	movq	%rax, %rdi
+	movq	$0, %rax
+	call printf
+syntax error
 	movq	$0, (%rsp)
 	call	exit
