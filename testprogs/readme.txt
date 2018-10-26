@@ -15,5 +15,5 @@ PASS!	looptest.calc - Loop over the first 101 numbers, printing each on a line b
 
 PASS!	pi.calc - Computer the value of pi using fixed point arithmetic, answer: 314156, using Leibniz formula.
 
-	fact.calc - Prints the result of your factorial implementation
+PASS!	fact.calc - Prints the result of your factorial implementation
 	  Should printout the value 0 twelve times.
