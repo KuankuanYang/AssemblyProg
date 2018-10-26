@@ -23,11 +23,11 @@ int ex(nodeType *p) {
 
     if (!p) return 0;
     switch(p->type) {
-    case typeCon:       
-        printf("\tpushq\t$%d\n", p->con.value); 
+    case typeCon:
+        printf("\tpushq\t$%d\n", p->con.value);
         break;
-    case typeId:        
-        printf("\tpushq\t%c\n", p->id.i + 'a'); 
+    case typeId:
+        printf("\tpushq\t%c\n", p->id.i + 'a');
         break;
     case typeOpr:
         switch(p->opr.oper) {
@@ -59,7 +59,7 @@ int ex(nodeType *p) {
                 printf("L%03d:\n", lbl1);
             }
             break;
-        case PRINT:     
+        case PRINT:
             ex(p->opr.op[0]);
             printf("\tpopq\t%%rdi\n");
             printf("\tmovq\t$format, %%rax\n");
@@ -69,11 +69,11 @@ int ex(nodeType *p) {
             printf("\tcall printf\n");
             // printf("\tprint\n");
             break;
-        case '=':       
+        case '=':
             ex(p->opr.op[1]);
             printf("\tpopq\t%c\n", p->opr.op[0]->id.i + 'a');
             break;
-        case UMINUS:    
+        case UMINUS:
             ex(p->opr.op[0]);
             printf("\tpopq\t%%rax\n");
             printf("\tnegq\t%%rax\n");
@@ -117,8 +117,9 @@ int ex(nodeType *p) {
             		case '/':											// backward version of '*'
             			printf("\tpopq\t%%rdi\n");
             			printf("\tpopq\t%%rax\n");
-            			printf("\tcdqo\n");					// sign-extend %rax into %rdx
-            			printf("\tidivq\t%%rdi\n");	// divide %rdx:%rax by %rdi, leaving result in %rax
+            			// printf("\tcdqo\n");					// sign-extend %rax into %rdx // cdqo unavailable in my computer (ubuntu 64-bit)
+            			printf("\tcqo\n"); 
+                  printf("\tidivq\t%%rdi\n");	// divide %rdx:%rax by %rdi, leaving result in %rax
             			printf("\tpushq\t%%rax\n");
             			// printf("\tdiv\n");
             			break;
