@@ -1,0 +1,7 @@
+*.o
+*.exe
+lex.yy.c
+lex.yy.o
+y.tab.c
+y.tab.h
+t.tab.o
