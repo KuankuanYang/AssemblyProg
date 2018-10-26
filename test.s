@@ -29,21 +29,9 @@ format: .string "%d\n"
  .section .text
  .globl main
 main:
+	pushq	$1
+	call lntwo
 	pushq	$0
-	call fact
-	pushq	$1
-	popq	%rbx
-	popq	%rax
-	sub	%rbx, %rax
-	pushq	%rax
-	popq	%rdi
-	movq	%rdi, %rsi
-	movq	$format, %rdi
-	movq	$0, %rax
-	call printf
-	pushq	$1
-	call fact
-	pushq	$1
 	popq	%rbx
 	popq	%rax
 	sub	%rbx, %rax
@@ -54,8 +42,8 @@ main:
 	movq	$0, %rax
 	call printf
 	pushq	$2
-	call fact
-	pushq	$2
+	call lntwo
+	pushq	$1
 	popq	%rbx
 	popq	%rax
 	sub	%rbx, %rax
@@ -66,8 +54,8 @@ main:
 	movq	$0, %rax
 	call printf
 	pushq	$3
-	call fact
-	pushq	$6
+	call lntwo
+	pushq	$1
 	popq	%rbx
 	popq	%rax
 	sub	%rbx, %rax
@@ -78,8 +66,8 @@ main:
 	movq	$0, %rax
 	call printf
 	pushq	$4
-	call fact
-	pushq	$24
+	call lntwo
+	pushq	$2
 	popq	%rbx
 	popq	%rax
 	sub	%rbx, %rax
@@ -90,8 +78,8 @@ main:
 	movq	$0, %rax
 	call printf
 	pushq	$5
-	call fact
-	pushq	$120
+	call lntwo
+	pushq	$2
 	popq	%rbx
 	popq	%rax
 	sub	%rbx, %rax
@@ -102,8 +90,8 @@ main:
 	movq	$0, %rax
 	call printf
 	pushq	$6
-	call fact
-	pushq	$720
+	call lntwo
+	pushq	$2
 	popq	%rbx
 	popq	%rax
 	sub	%rbx, %rax
@@ -114,8 +102,8 @@ main:
 	movq	$0, %rax
 	call printf
 	pushq	$7
-	call fact
-	pushq	$5040
+	call lntwo
+	pushq	$2
 	popq	%rbx
 	popq	%rax
 	sub	%rbx, %rax
@@ -126,8 +114,8 @@ main:
 	movq	$0, %rax
 	call printf
 	pushq	$8
-	call fact
-	pushq	$40320
+	call lntwo
+	pushq	$3
 	popq	%rbx
 	popq	%rax
 	sub	%rbx, %rax
@@ -138,8 +126,8 @@ main:
 	movq	$0, %rax
 	call printf
 	pushq	$9
-	call fact
-	pushq	$362880
+	call lntwo
+	pushq	$3
 	popq	%rbx
 	popq	%rax
 	sub	%rbx, %rax
@@ -150,8 +138,8 @@ main:
 	movq	$0, %rax
 	call printf
 	pushq	$10
-	call fact
-	pushq	$3628800
+	call lntwo
+	pushq	$3
 	popq	%rbx
 	popq	%rax
 	sub	%rbx, %rax
@@ -162,8 +150,80 @@ main:
 	movq	$0, %rax
 	call printf
 	pushq	$11
-	call fact
-	pushq	$39916800
+	call lntwo
+	pushq	$3
+	popq	%rbx
+	popq	%rax
+	sub	%rbx, %rax
+	pushq	%rax
+	popq	%rdi
+	movq	%rdi, %rsi
+	movq	$format, %rdi
+	movq	$0, %rax
+	call printf
+	pushq	$12
+	call lntwo
+	pushq	$3
+	popq	%rbx
+	popq	%rax
+	sub	%rbx, %rax
+	pushq	%rax
+	popq	%rdi
+	movq	%rdi, %rsi
+	movq	$format, %rdi
+	movq	$0, %rax
+	call printf
+	pushq	$13
+	call lntwo
+	pushq	$3
+	popq	%rbx
+	popq	%rax
+	sub	%rbx, %rax
+	pushq	%rax
+	popq	%rdi
+	movq	%rdi, %rsi
+	movq	$format, %rdi
+	movq	$0, %rax
+	call printf
+	pushq	$14
+	call lntwo
+	pushq	$3
+	popq	%rbx
+	popq	%rax
+	sub	%rbx, %rax
+	pushq	%rax
+	popq	%rdi
+	movq	%rdi, %rsi
+	movq	$format, %rdi
+	movq	$0, %rax
+	call printf
+	pushq	$15
+	call lntwo
+	pushq	$3
+	popq	%rbx
+	popq	%rax
+	sub	%rbx, %rax
+	pushq	%rax
+	popq	%rdi
+	movq	%rdi, %rsi
+	movq	$format, %rdi
+	movq	$0, %rax
+	call printf
+	pushq	$16
+	call lntwo
+	pushq	$4
+	popq	%rbx
+	popq	%rax
+	sub	%rbx, %rax
+	pushq	%rax
+	popq	%rdi
+	movq	%rdi, %rsi
+	movq	$format, %rdi
+	movq	$0, %rax
+	call printf
+	pushq	$17
+	call lntwo
+	pushq	$4
 	popq	%rbx
 	popq	%rax
 	sub	%rbx, %rax

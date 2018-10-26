@@ -1,0 +1,17 @@
+print lntwo 1 - 0;
+print lntwo 2 - 1;
+print lntwo 3 - 1;
+print lntwo 4 - 2;
+print lntwo 5 - 2;
+print lntwo 6 - 2;
+print lntwo 7 - 2;
+print lntwo 8 - 3;
+print lntwo 9 - 3;
+print lntwo 10 - 3;
+print lntwo 11 - 3;
+print lntwo 12 - 3;
+print lntwo 13 - 3;
+print lntwo 14 - 3;
+print lntwo 15 - 3;
+print lntwo 16 - 4;
+print lntwo 17 - 4;
