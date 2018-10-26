@@ -37,9 +37,8 @@ main:
 	sub	%rbx, %rax
 	pushq	%rax
 	popq	%rdi
-	movq	$format, %rax
 	movq	%rdi, %rsi
-	movq	%rax, %rdi
+	movq	$format, %rdi
 	movq	$0, %rax
 	call printf
 	pushq	$1
@@ -50,9 +49,8 @@ main:
 	sub	%rbx, %rax
 	pushq	%rax
 	popq	%rdi
-	movq	$format, %rax
 	movq	%rdi, %rsi
-	movq	%rax, %rdi
+	movq	$format, %rdi
 	movq	$0, %rax
 	call printf
 	pushq	$2
@@ -63,9 +61,8 @@ main:
 	sub	%rbx, %rax
 	pushq	%rax
 	popq	%rdi
-	movq	$format, %rax
 	movq	%rdi, %rsi
-	movq	%rax, %rdi
+	movq	$format, %rdi
 	movq	$0, %rax
 	call printf
 	pushq	$3
@@ -76,9 +73,8 @@ main:
 	sub	%rbx, %rax
 	pushq	%rax
 	popq	%rdi
-	movq	$format, %rax
 	movq	%rdi, %rsi
-	movq	%rax, %rdi
+	movq	$format, %rdi
 	movq	$0, %rax
 	call printf
 	pushq	$4
@@ -89,9 +85,8 @@ main:
 	sub	%rbx, %rax
 	pushq	%rax
 	popq	%rdi
-	movq	$format, %rax
 	movq	%rdi, %rsi
-	movq	%rax, %rdi
+	movq	$format, %rdi
 	movq	$0, %rax
 	call printf
 	pushq	$5
@@ -102,9 +97,8 @@ main:
 	sub	%rbx, %rax
 	pushq	%rax
 	popq	%rdi
-	movq	$format, %rax
 	movq	%rdi, %rsi
-	movq	%rax, %rdi
+	movq	$format, %rdi
 	movq	$0, %rax
 	call printf
 	pushq	$6
@@ -115,9 +109,8 @@ main:
 	sub	%rbx, %rax
 	pushq	%rax
 	popq	%rdi
-	movq	$format, %rax
 	movq	%rdi, %rsi
-	movq	%rax, %rdi
+	movq	$format, %rdi
 	movq	$0, %rax
 	call printf
 	pushq	$7
@@ -128,9 +121,8 @@ main:
 	sub	%rbx, %rax
 	pushq	%rax
 	popq	%rdi
-	movq	$format, %rax
 	movq	%rdi, %rsi
-	movq	%rax, %rdi
+	movq	$format, %rdi
 	movq	$0, %rax
 	call printf
 	pushq	$8
@@ -141,9 +133,8 @@ main:
 	sub	%rbx, %rax
 	pushq	%rax
 	popq	%rdi
-	movq	$format, %rax
 	movq	%rdi, %rsi
-	movq	%rax, %rdi
+	movq	$format, %rdi
 	movq	$0, %rax
 	call printf
 	pushq	$9
@@ -154,9 +145,8 @@ main:
 	sub	%rbx, %rax
 	pushq	%rax
 	popq	%rdi
-	movq	$format, %rax
 	movq	%rdi, %rsi
-	movq	%rax, %rdi
+	movq	$format, %rdi
 	movq	$0, %rax
 	call printf
 	pushq	$10
@@ -167,9 +157,8 @@ main:
 	sub	%rbx, %rax
 	pushq	%rax
 	popq	%rdi
-	movq	$format, %rax
 	movq	%rdi, %rsi
-	movq	%rax, %rdi
+	movq	$format, %rdi
 	movq	$0, %rax
 	call printf
 	pushq	$11
@@ -180,9 +169,8 @@ main:
 	sub	%rbx, %rax
 	pushq	%rax
 	popq	%rdi
-	movq	$format, %rax
 	movq	%rdi, %rsi
-	movq	%rax, %rdi
+	movq	$format, %rdi
 	movq	$0, %rax
 	call printf
 	movq	$0, (%rsp)

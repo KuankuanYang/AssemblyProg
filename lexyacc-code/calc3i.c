@@ -62,9 +62,8 @@ int ex(nodeType *p) {
         case PRINT:
             ex(p->opr.op[0]);
             printf("\tpopq\t%%rdi\n");
-            printf("\tmovq\t$format, %%rax\n");
             printf("\tmovq\t%%rdi, %%rsi\n");
-            printf("\tmovq\t%%rax, %%rdi\n");
+            printf("\tmovq\t$format, %%rdi\n");
             printf("\tmovq\t$0, %%rax\n");
             printf("\tcall printf\n");
             // printf("\tprint\n");
@@ -83,7 +82,6 @@ int ex(nodeType *p) {
 				case FACT:
   	    		ex(p->opr.op[0]);
 	   			 	printf("\tcall fact\n");
-
 	   	 			break;
 				case LNTWO:
 	    			ex(p->opr.op[0]);
