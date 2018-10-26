@@ -29,80 +29,155 @@ format: .string "%d\n"
  .section .text
  .globl main
 main:
-	pushq	$1000001
-	popq	n
-	pushq	$100000000
-	popq	s
 	pushq	$0
-	popq	a
-	pushq	$0
-	popq	t
-L000:
-	pushq	n
-	pushq	$0
-	popq	%rdi
-	popq	%rax
-	cmpq	%rdi, %rax
-	jle	L001
-	pushq	t
-	pushq	$0
-	popq	%rdi
-	popq	%rax
-	cmpq	%rdi, %rax
-	jne	L002
-	pushq	n
-	popq	d
+	call fact
 	pushq	$1
-	popq	t
-	jmp	L003
-L002:
-	pushq	n
-	popq	%rax
-	negq	%rax
-	pushq	%rax
-	popq	d
-	pushq	$0
-	popq	t
-L003:
-	pushq	a
-	pushq	s
-	pushq	d
-	popq	%rdi
-	popq	%rax
-	cqo
-	idivq	%rdi
-	pushq	%rax
 	popq	%rbx
 	popq	%rax
-	addq	%rbx, %rax
+	sub	%rbx, %rax
 	pushq	%rax
-	popq	a
-	pushq	n
+	popq	%rdi
+	movq	$format, %rax
+	movq	%rdi, %rsi
+	movq	%rax, %rdi
+	movq	$0, %rax
+	call printf
+	pushq	$1
+	call fact
+	pushq	$1
+	popq	%rbx
+	popq	%rax
+	sub	%rbx, %rax
+	pushq	%rax
+	popq	%rdi
+	movq	$format, %rax
+	movq	%rdi, %rsi
+	movq	%rax, %rdi
+	movq	$0, %rax
+	call printf
+	pushq	$2
+	call fact
 	pushq	$2
 	popq	%rbx
 	popq	%rax
 	sub	%rbx, %rax
 	pushq	%rax
-	popq	n
-	jmp	L000
-L001:
-	pushq	a
-	pushq	s
-	pushq	$100000
 	popq	%rdi
+	movq	$format, %rax
+	movq	%rdi, %rsi
+	movq	%rax, %rdi
+	movq	$0, %rax
+	call printf
+	pushq	$3
+	call fact
+	pushq	$6
+	popq	%rbx
 	popq	%rax
-	cqo
-	idivq	%rdi
+	sub	%rbx, %rax
 	pushq	%rax
 	popq	%rdi
-	popq	%rax
-	cqo
-	idivq	%rdi
-	pushq	%rax
+	movq	$format, %rax
+	movq	%rdi, %rsi
+	movq	%rax, %rdi
+	movq	$0, %rax
+	call printf
 	pushq	$4
-	popq	%rdi
+	call fact
+	pushq	$24
+	popq	%rbx
 	popq	%rax
-	imulq	%rdi
+	sub	%rbx, %rax
+	pushq	%rax
+	popq	%rdi
+	movq	$format, %rax
+	movq	%rdi, %rsi
+	movq	%rax, %rdi
+	movq	$0, %rax
+	call printf
+	pushq	$5
+	call fact
+	pushq	$120
+	popq	%rbx
+	popq	%rax
+	sub	%rbx, %rax
+	pushq	%rax
+	popq	%rdi
+	movq	$format, %rax
+	movq	%rdi, %rsi
+	movq	%rax, %rdi
+	movq	$0, %rax
+	call printf
+	pushq	$6
+	call fact
+	pushq	$720
+	popq	%rbx
+	popq	%rax
+	sub	%rbx, %rax
+	pushq	%rax
+	popq	%rdi
+	movq	$format, %rax
+	movq	%rdi, %rsi
+	movq	%rax, %rdi
+	movq	$0, %rax
+	call printf
+	pushq	$7
+	call fact
+	pushq	$5040
+	popq	%rbx
+	popq	%rax
+	sub	%rbx, %rax
+	pushq	%rax
+	popq	%rdi
+	movq	$format, %rax
+	movq	%rdi, %rsi
+	movq	%rax, %rdi
+	movq	$0, %rax
+	call printf
+	pushq	$8
+	call fact
+	pushq	$40320
+	popq	%rbx
+	popq	%rax
+	sub	%rbx, %rax
+	pushq	%rax
+	popq	%rdi
+	movq	$format, %rax
+	movq	%rdi, %rsi
+	movq	%rax, %rdi
+	movq	$0, %rax
+	call printf
+	pushq	$9
+	call fact
+	pushq	$362880
+	popq	%rbx
+	popq	%rax
+	sub	%rbx, %rax
+	pushq	%rax
+	popq	%rdi
+	movq	$format, %rax
+	movq	%rdi, %rsi
+	movq	%rax, %rdi
+	movq	$0, %rax
+	call printf
+	pushq	$10
+	call fact
+	pushq	$3628800
+	popq	%rbx
+	popq	%rax
+	sub	%rbx, %rax
+	pushq	%rax
+	popq	%rdi
+	movq	$format, %rax
+	movq	%rdi, %rsi
+	movq	%rax, %rdi
+	movq	$0, %rax
+	call printf
+	pushq	$11
+	call fact
+	pushq	$39916800
+	popq	%rbx
+	popq	%rax
+	sub	%rbx, %rax
 	pushq	%rax
 	popq	%rdi
 	movq	$format, %rax
