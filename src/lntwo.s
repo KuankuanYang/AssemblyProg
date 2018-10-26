@@ -10,7 +10,7 @@ ln8=3       8         >=8, <2*2*2*2   3-4
 ln9=3.1=3   9         >=8, <2*2*2*2   3-4
 result = the less number of 2
 */
-.section .text
+ .section .text
  .global lntwo
 lntwo:
   movq  8(%rsp), %rcx     /* import number */
