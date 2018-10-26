@@ -6,6 +6,10 @@ c=a-b;
 print c;
 c=a*b;
 print c;
+c=b/a;
+print c;
+d=-3;
+print d;
 if (1<2) {
 print 111;
 }
