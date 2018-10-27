@@ -18,7 +18,7 @@ lntwo:
   movq  $1, %rsi          /* for count */
   cmpq  $1, %rcx
 
-  je  return
+  je  lntwo_return
   movq  $0, %rsi
   jmp lntwo_loop
 
@@ -30,9 +30,9 @@ lntwo_loop:
   cmpq  %rbx, %rcx
   jge   lntwo_loop
 
-  jmp return
+  jmp lntwo_return
 
-return:
+lntwo_return:
   subq  $1, %rsi
   movq  %rsi, 8(%rsp)
   ret
