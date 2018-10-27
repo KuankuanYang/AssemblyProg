@@ -8,6 +8,8 @@ int gcd(int a, int b) {
   return a;
 }
 */
+ .section .data
+tmp:  .quad 0
  .section .text
  .global gcd
 gcd:
