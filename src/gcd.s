@@ -31,7 +31,7 @@ gcd_loop:
   movq  tmp, %rsi
 
   cmp   $0, %rdi
-  jn    gcd_loop
+  jne   gcd_loop
 
   movq  %rsi, %rax
   jmp   gcd_return
