@@ -1,0 +1,8 @@
+usage: ./x86-64-driver fname.calc
+
+features:
+0. check if fname.s and fname already under 'output' folder
+1. fname.s= prologue.s;(cat fname.calc|./bin/calc3i.exe);epilogue.s
+2. scan whole fname.s if matches 'fact','Intwo','gcd' then call the related .s file,i.e. if matches 'fact' then 'gcc -no-pie fname.s src/fact.s -o fact'
+3. if none match then 'gcc -no-pie fname.s -o fact'
+4. 'fact' 'fact.s' should stay in 'output' folder
