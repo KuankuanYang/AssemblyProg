@@ -94,7 +94,7 @@ int ex(nodeType *p) {
                 case GCD:
                     printf("\tpopq\t%%rdi\n");
                     printf("\tpopq\t%%rsi\n");
-                    printf("\tmovq\t$0, %%rax"\n);
+                    printf("\tmovq\t$0, %%rax\n");
                     printf("\tcall gcd\n");
                     printf("\tpushq\t%%rax\n");
                     // printf("\tgcd\n");
