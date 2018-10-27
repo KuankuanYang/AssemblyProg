@@ -98,62 +98,62 @@ int ex(nodeType *p) {
                     printf("\tcall gcd\n");
                     printf("\tpushq\t%%rax\n");
                     // printf("\tgcd\n");
-                            break;
+                    break;
                 case '+':
-                            printf("\tpopq\t%%rbx\n");
-                            printf("\tpopq\t%%rax\n");
-                            printf("\taddq\t%%rbx, %%rax\n");
-                            printf("\tpushq\t%%rax\n");
-                            // printf("\tadd\n");
-                            break;
+                    printf("\tpopq\t%%rbx\n");
+                    printf("\tpopq\t%%rax\n");
+                    printf("\taddq\t%%rbx, %%rax\n");
+                    printf("\tpushq\t%%rax\n");
+                    // printf("\tadd\n");
+                    break;
                 case '-':
-                            printf("\tpopq\t%%rbx\n");
-                            printf("\tpopq\t%%rax\n");
-                            printf("\tsub\t%%rbx, %%rax\n");
-                            printf("\tpushq\t%%rax\n");
-                            // printf("\tsub\n");
-                            break;
+                    printf("\tpopq\t%%rbx\n");
+                    printf("\tpopq\t%%rax\n");
+                    printf("\tsub\t%%rbx, %%rax\n");
+                    printf("\tpushq\t%%rax\n");
+                    // printf("\tsub\n");
+                    break;
                 case '*':
-                            printf("\tpopq\t%%rdi\n");
-                            printf("\tpopq\t%%rax\n");
-                            printf("\timulq\t%%rdi\n"); // multiply it by the contents of %rax, then places the low 64 bits of the result in %rax, high 64 bits in %rdx
-                            printf("\tpushq\t%%rax\n");
-                            break;
-                            // printf("\tmul\n"); break;
+                    printf("\tpopq\t%%rdi\n");
+                    printf("\tpopq\t%%rax\n");
+                    printf("\timulq\t%%rdi\n"); // multiply it by the contents of %rax, then places the low 64 bits of the result in %rax, high 64 bits in %rdx
+                    printf("\tpushq\t%%rax\n");
+                    break;
+                    // printf("\tmul\n"); break;
                 case '/':   // backward version of '*'
-                            printf("\tpopq\t%%rdi\n");
-                            printf("\tpopq\t%%rax\n");
-                            // printf("\tcdqo\n");      // sign-extend %rax into %rdx // cdqo unavailable in my computer (ubuntu 64-bit)
-                            printf("\tcqo\n");
-                            printf("\tidivq\t%%rdi\n"); // divide %rdx:%rax by %rdi, leaving result in %rax
-                            printf("\tpushq\t%%rax\n");
-                            // printf("\tdiv\n");
-                            break;
-                            // CMP two different registers, then sets a few bits in an internal EFLAGS registers
-                            // // CMP a, b ==> calculate a - b, modify the flag
+                    printf("\tpopq\t%%rdi\n");
+                    printf("\tpopq\t%%rax\n");
+                    // printf("\tcdqo\n");      // sign-extend %rax into %rdx // cdqo unavailable in my computer (ubuntu 64-bit)
+                    printf("\tcqo\n");
+                    printf("\tidivq\t%%rdi\n"); // divide %rdx:%rax by %rdi, leaving result in %rax
+                    printf("\tpushq\t%%rax\n");
+                    // printf("\tdiv\n");
+                    break;
+                    // CMP two different registers, then sets a few bits in an internal EFLAGS registers
+                    // // CMP a, b ==> calculate a - b, modify the flag
                 case '<':
-                            mycmp(1);
-                            // printf("\tpopq\t%%rdi\n");	// for example, a<100, in this case, %rdi will be the $100 (second) and %rax (first) will be the 'a'. %rax < %rdi
-                            // printf("\tpopq\t%%rax\n");
-                            // printf("\tcmpq\t%%rdi, %%rax\n");
-                            // printf("\tjge");
-                            // printf("\tcompLT\n");
-                            break;
+                    mycmp(1);
+                    // printf("\tpopq\t%%rdi\n");	// for example, a<100, in this case, %rdi will be the $100 (second) and %rax (first) will be the 'a'. %rax < %rdi
+                    // printf("\tpopq\t%%rax\n");
+                    // printf("\tcmpq\t%%rdi, %%rax\n");
+                    // printf("\tjge");
+                    // printf("\tcompLT\n");
+                    break;
                 case '>':
-                            mycmp(2);
-                            break;
+                    mycmp(2);
+                    break;
                 case GE:
-                            mycmp(3);
-                            break;
+                    mycmp(3);
+                    break;
                 case LE:
-                            mycmp(4);
-                            break;
+                    mycmp(4);
+                    break;
                 case NE:
-                            mycmp(5);
-                            break;
+                    mycmp(5);
+                    break;
                 case EQ:
-                            mycmp(6);
-                            break;
+                    mycmp(6);
+                    break;
             }
         }
     }
