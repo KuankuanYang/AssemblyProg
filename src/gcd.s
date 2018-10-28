@@ -28,6 +28,7 @@ gcd:
 gcd_loop:
   movq  %rdi, tmp
   movq  %rsi, %rax
+  cqo
   idivq %rdi
   movq  %rdx, %rdi
   movq  tmp, %rsi
