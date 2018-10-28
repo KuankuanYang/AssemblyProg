@@ -92,9 +92,9 @@ case $sflag in
 ;;
 4) gcc -no-pie $fname.s src/fact.s src/lntwo.s -o $fname
 ;;
-6) gcc -no-pie $fname.s src/fact.s src/gcd.s-o $fname
+6) gcc -no-pie $fname.s src/fact.s src/gcd.s -o $fname
 ;;
-8) gcc -no-pie $fname.s src/lntwo.s src/gcd.s-o $fname
+8) gcc -no-pie $fname.s src/lntwo.s src/gcd.s -o $fname
 ;;
 9) gcc -no-pie $fname.s src/fact.s src/lntwo.s src/gcd.s -o $fname
 ;;
