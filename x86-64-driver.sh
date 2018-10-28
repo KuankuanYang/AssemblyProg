@@ -82,13 +82,12 @@ fi
 
 sflag=0
 case $sflag in
-0) 
- #0) gcc -no-pie $fname.s -o fname
- #1) gcc -no-pie $fname.s src/fact.s -o fname
- #3) gcc -no-pie $fname.s src/lntwo.s -o fname
-# 5) gcc -no-pie $fname.s src/gcd.s -o fname
-# 4) gcc -no-pie $fname.s src/fact.s src/lntwo.s -o fname
-# 6) gcc -no-pie $fname.s src/fact.s src/gcd.s-o fname
-# 8) gcc -no-pie $fname.s src/lntwo.s src/gcd.s-o fname
-# 9) gcc -no-pie $fname.s src/fact.s src/lntwo.s src/gcd.s -o fname
+0) gcc -no-pie $fname.s -o fname
+1) gcc -no-pie $fname.s src/fact.s -o fname
+3) gcc -no-pie $fname.s src/lntwo.s -o fname
+5) gcc -no-pie $fname.s src/gcd.s -o fname
+4) gcc -no-pie $fname.s src/fact.s src/lntwo.s -o fname
+6) gcc -no-pie $fname.s src/fact.s src/gcd.s-o fname
+8) gcc -no-pie $fname.s src/lntwo.s src/gcd.s-o fname
+9) gcc -no-pie $fname.s src/fact.s src/lntwo.s src/gcd.s -o fname
 esac
