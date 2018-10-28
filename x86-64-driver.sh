@@ -59,14 +59,14 @@ sflag=$((sflag + flag))
 fi 
 
 if [ $(grep -c 'lntwo' $fname.s) -gt 0 ]; then  
-echo $(grep -c 'lntwo' $fname.s)
+#echo $(grep -c 'lntwo' $fname.s)
 flag=3  
 sflag=$((sflag + flag))
 #echo $flag
 fi
 
 if [ $(grep -c 'gcd' $fname.s) -gt 0 ]; then
-echo $(grep -c 'gcd' $fname.s)  
+#echo $(grep -c 'gcd' $fname.s)  
 flag=5  
 sflag=$((sflag + flag))
 fi
@@ -80,14 +80,24 @@ fi
  #echo "fact"
 #esac
 
-sflag=0
+#sflag=1
 case $sflag in
-0) gcc -no-pie $fname.s -o fname
-1) gcc -no-pie $fname.s src/fact.s -o fname
-3) gcc -no-pie $fname.s src/lntwo.s -o fname
-5) gcc -no-pie $fname.s src/gcd.s -o fname
-4) gcc -no-pie $fname.s src/fact.s src/lntwo.s -o fname
-6) gcc -no-pie $fname.s src/fact.s src/gcd.s-o fname
-8) gcc -no-pie $fname.s src/lntwo.s src/gcd.s-o fname
-9) gcc -no-pie $fname.s src/fact.s src/lntwo.s src/gcd.s -o fname
-esac
+0) gcc -no-pie $fname.s -o $fname
+;;
+1) gcc -no-pie $fname.s src/fact.s -o $fname
+;;
+3) gcc -no-pie $fname.s src/lntwo.s -o $fname
+;;
+5) gcc -no-pie $fname.s src/gcd.s -o $fname
+;;
+4) gcc -no-pie $fname.s src/fact.s src/lntwo.s -o $fname
+;;
+6) gcc -no-pie $fname.s src/fact.s src/gcd.s-o $fname
+;;
+8) gcc -no-pie $fname.s src/lntwo.s src/gcd.s-o $fname
+;;
+9) gcc -no-pie $fname.s src/fact.s src/lntwo.s src/gcd.s -o $fname
+;;
+*) echo end of case
+;;
+esac 
